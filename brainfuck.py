@@ -1,8 +1,3 @@
-
-
-
-
-
 class BrainfuckMachine():
     
     class HeadOverflow(Exception):
@@ -15,7 +10,7 @@ class BrainfuckMachine():
     def __init__(self,size):
         self.size = size
         self.head = 0
-        self.tape = [0] * size  #list(0 for i in range(size)) I was using this, is it better to use [0] * n ?
+        self.tape = [0] * size  
         self.code = ""
         self.message = ""
     
@@ -49,9 +44,6 @@ class BrainfuckMachine():
             
             elif self.code[i] == '[':
                 
-                # if self.code[i+1] is not None and self.code[i+1] == '[':
-                #     raise self.BracketMismatch
-                    
                 if self.tape[self.head] == 0:
                     same_bracket_counter = 1
                     while same_bracket_counter > 0:
